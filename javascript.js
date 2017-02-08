@@ -1,43 +1,61 @@
-var $webTitle = '';
-var $webURL = '';
 
 $('.create').on('click', function() {
-  console.log('A click!')
-  if ($('.title').val() == '' || $('.url').val() == ''){
-    alert('Error: Enter a Valid Input');
-    return; 
+  checkInputs();
+  var exitCode = oneInputError();
+  printBookmark(exitCode);
+})
+
+function checkInputs(){
+  if ($('.title').val() == '' && $('.url').val() == ''){
+    $('.create').prop('disabled', true);
+  } else if ($('.title').val() == '' || $('.url').val() == '') {
+    $('.create').prop('disabled', false);
   }
-  $webTitle = $('.title').val();
-  $webURL = $('.url').val();
-  console.log($webTitle);
+}
+
+function oneInputError() {
+  var exitCode = '';
+  if ($('.title').val() == '' || $('.url').val() == '') {
+    alert('Error: Please ensure both inputs are valid');
+    exitCode = true;
+    return exitCode;
+  }
+}
+
+function printBookmark (exitCode) {
+  if (exitCode == true) {return}
+  var $webTitle = $('.title').val();
+  var $webURL = $('.url').val();
   $('.bookmark-container').prepend(
   '<section class="bookmark">'+
   '<h2>'+$webTitle+'</h2>'+
   '<hr>'+
-  '<h3>'+$webURL+'</h3>'+
+  '<a href=http://'+$webURL+' target="_blank">'+$webURL+'</a>'+
   '<hr>'+
-  '<button class="read">Read</button>'+
+  '<button class="reviewed">Read</button>'+
   '<button class="delete">Delete</button>'+
   '</section>');
+}
 
+$('.bookmark-container').on('click', '.reviewed', function(){
+  $(this).toggleClass('read');
 })
 
-
-$('.bookmark-container').on('click', 'button', function(event){
-  console.log(event.target);
-  console.log($webTitle);
-  $(this).toggleClass('red');
-})
-
-$('.bookmark-container').on('click', 'button', function(event){
-  console.log(event.target);
-  console.log($webURL);
+$('.bookmark-container').on('click', '.delete', function(){
   $(this).parent().remove();
 })
 
-// $('.title').(function() {
-//   if ($('.title').val() == '' || $('.url').val() == ''){
-//     alert('Error: Enter a Title');
-//   }
-//
-// })
+$('.title').keyup(function() {
+  checkInputs();
+})
+
+$('.url').keyup(function() {
+  checkInputs();
+})
+
+ $('html').on('click', function() {
+console.log('Qty links: '+$('.bookmark-container a').length);
+console.log('Qty read links: '+$('.read').length);
+var $unRead = $('.reviewed').length-$('.read').length;
+console.log('Qty unread links: '+$unRead);
+})
