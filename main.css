@@ -1,7 +1,142 @@
-.bookmark-container {
-  border: 2px solid blue;
+.input-container, .bookmark-container {
+  font-family: "Open sans", sans-serif;
+  font-weight: 800;
+  text-align: center;
 }
 
+h1 {
+  color: #FFFFFF;
+}
+
+img {
+  padding-top: 15px;
+
+}
+
+.title {
+  color: #FFFFFF;
+  font-size: 33px;
+  text-align: center;
+  padding: 3px 2px 3px 2px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.input-container {
+  background-color: #455A64;
+  height: 335px;
+}
+
+input {
+  border: 2px solid #CFD8DC;
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+:placeholder-shown {
+  font-size: 35px;
+  padding-left: 10px;
+  font-weight: 300;
+  color: #F2F4F4;
+  text-align: left;
+}
+
+.create {
+  background-color: #FFC107;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  margin-bottom: 2px;
+  width: 90%;
+}
+
+.create:hover {
+  background-color: #FFD773;
+}
+
+.create:hover:disabled {
+  background-color: #FFC107;
+}
+
+input, .create {
+  width: 280px;
+  height: 50px;
+  margin: 30px auto;
+  display: block;
+  width: 85%;
+}
+
+.bookmark-container {
+  background-color: #CFD8DC;
+  height: 200px;
+  width: 100%;
+  float: right;
+}
+
+/*Bookmark info*/
+
 .bookmark {
-  border: 2px solid red;
+  width: 90%;
+  margin: 15px auto;
+  border: 2px solid #607D8B;
+  background-color: #FFFFFF;
+}
+
+h2 {
+  margin: 10px;
+  color: #455A64;
+  font-weight: 500;
+  text-align: left;
+}
+
+h3 {
+  margin: 10px;
+  color: #607D8B;
+  font-weight: 200;
+  text-align: left;
+}
+
+hr {
+  margin: 0px 10px;
+  border-style: none;
+  border: 1px solid #CFD8DC;
+}
+
+.read, .delete {
+  margin: 10px;
+  border: none;
+  border-bottom: 1px solid #455A64;
+  background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 900px) {
+  .input-container, .bookmark-container {
+    width: 50%;
+  }
+  .input-container {
+    float: left;
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 60px;
+    padding-top: 100px;
+  }
+
+  img {
+    width: 90px;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  .create {
+    height: 38px;
+  }
+
+  input, .create {
+    margin: 55px auto;
+  }
 }
