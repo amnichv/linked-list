@@ -30,11 +30,12 @@ function printBookmark (exitCode) {
   '<section class="bookmark">'+
   '<h2>'+$webTitle+'</h2>'+
   '<hr>'+
-  '<a href=http://'+$webURL+' target="_blank">'+$webURL+'</a>'+
+  '<a href=http://'+$webURL+' target="_blank" class="underline">'+$webURL+'</a>'+
   '<hr>'+
-  '<button class="reviewed">Read</button>'+
-  '<button class="delete">Delete</button>'+
+  '<button class="reviewed underline">Read</button>'+
+  '<button class="delete underline">Delete</button>'+
   '</section>');
+  $('.title-url')[0].reset();
 }
 
 $('.bookmark-container').on('click', '.reviewed', function(){
