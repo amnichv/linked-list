@@ -27,28 +27,28 @@ img {
 input {
   border: 2px solid #CFD8DC;
   font-size: 30px;
-  padding-left: 10px;
   font-size: 33px;
-  text-indent: 10px;
   font-weight: 400;
+  padding-left: 10px;
+  text-indent: 10px;
 }
 
 :placeholder-shown {
-  font-size: 35px;
-  padding-left: 10px;
-  font-weight: 300;
   color: #F2F4F4;
+  font-size: 35px;
+  font-weight: 300;
+  padding-left: 10px;
   text-align: left;
 }
 
 .create {
   background-color: #FFC107;
+  border: none;
   color: #FFFFFF;
   font-size: 22px;
   font-weight: 700;
-  border: none;
-  outline: none;
   margin-bottom: 2px;
+  outline: none;
   width: 90%;
 }
 
@@ -61,67 +61,68 @@ input {
 }
 
 input, .create {
-  width: 280px;
+  display: block;
   height: 50px;
   margin: 30px auto;
-  display: block;
+  width: 280px;
   width: 85%;
 }
 
 .bookmark-container {
   background-color: #CFD8DC;
+  float: right;
   height: 100%;
   width: 100%;
-  float: right;
 }
 
 /*Bookmark info*/
 
 .bookmark {
-  width: 90%;
+  background-color: #FFFFFF;
+  border: 2px solid #607D8B;
   height: 175px;
   margin: 15px auto;
-  border: 2px solid #607D8B;
-  background-color: #FFFFFF;
+  width: 90%;
 }
 
 h2 {
-  margin: 10px 20px;
   color: #455A64;
-  font-weight: 400;
-  text-align: left;
   font-size: 30px;
+  font-weight: 400;
+  margin: 10px 20px;
+  text-align: left;
 }
 
 hr {
-  margin: 0px 15px;
   border-style: none;
   border: 1px solid #CFD8DC;
+  margin: 0px 15px;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 a {
   color: #607D8B;
-  margin: 24px 15px;
-  /*text-decoration:underline;*/
-  text-decoration: underline solid #F2F4F4;
-  font-weight: 300;
-  text-align: left;
   display: inline-block;
   font-size: 23px;
+  font-weight: 300;
+  margin: 24px 15px;
+  text-align: left;
+  text-decoration: underline solid #F2F4F4;
 }
 
 .reviewed, .delete {
-  margin: 10px;
-  display: inline-block;
-  border: none;
-  /*border-bottom: 1px solid #F2F4F4;*/
-  /*text-decoration-color: F2F4F4;*/
-  text-decoration: underline solid #F2F4F4;
   background-color: #FFFFFF;
-  outline: none;
+  border: none;
   color: #455A64;
+  display: inline-block;
   font-size: 21px;
   font-weight: 200;
+  margin: 10px;
+  outline: none;
+  text-decoration: underline solid #F2F4F4;
 }
 
 .reviewed:hover, .delete:hover {
@@ -144,9 +145,13 @@ a {
   background-color: #FDB8B7
 }
 
-@media screen and (min-width: 900px) {
+.underline {
+  border-bottom: 1px solid #F2F4F4;
+}
+
+@media screen and (min-width: 850px) {
   body {
-    background-color: magenta;
+    background-color: #455A64;
   }
 
   .input-container, .bookmark-container {
